@@ -8,7 +8,7 @@
       <button class="menu-btn">DOCUMENTATION</button>
     </div>
     <div class="login-bg" v-if="!isHidden">
-      <login-navbar />
+      <login-navbar :isHidden="isHidden" />
       <login-form />
     </div>
   </div>
@@ -18,9 +18,10 @@
 export default {
   data: () => {
     return {
-      isHidden: false,
+      isHidden: true,
     };
   },
+  // props:['isHidden'],
   method: () => {},
 };
 </script>

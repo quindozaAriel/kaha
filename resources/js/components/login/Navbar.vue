@@ -1,13 +1,15 @@
 <template>
   <div class="navbr">
-    <div class="left-menu">< GO BACK</div>
-    <div class="right-menu">
-      NEED ACCOUNT? <a href="#">REGISTER</a>
+    <div class="left-menu" v-on:click="isHidden = true">
+      <font-awesome-icon icon="angle-left" /> GO BACK {{ isHidden }}
     </div>
+    <div class="right-menu">NEED ACCOUNT? <a href="#">REGISTER</a></div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  props: ["isHidden"]
+};
 </script>
 <style lang="scss" scoped>
 .navbr {
@@ -16,9 +18,10 @@ export default {};
   position: absolute;
   top: 0;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 2px;
-
+  font-weight: bold;
+  padding: 30px 20px 20px 20px;
 }
 
 .left-menu {
@@ -31,10 +34,12 @@ export default {};
   height: 100%;
   width: auto;
   float: right;
-  a{
-    border:1px solid white;
-    color:white;
+  a {
+    border: 2px solid white;
+    color: white;
     text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
   }
 }
 </style>
